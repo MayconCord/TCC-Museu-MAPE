@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Introduction() {
+function Intro() {
     return(
         <div className="container p-5">
             <div class="introduction-container">
@@ -16,4 +16,4 @@ function Introduction() {
     );
 }
 
-export default Introduction;
+export default Intro;

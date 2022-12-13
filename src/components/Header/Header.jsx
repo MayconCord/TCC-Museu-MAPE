@@ -3,7 +3,7 @@ import './index.css';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
 
-const Headers = (props) => {
+const Header = (props) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggle = () => setIsOpen(!isOpen);
@@ -13,7 +13,7 @@ const Headers = (props) => {
             <Navbar className="navbar" dark expand="md" styles={{background : 'no-repeat center/cover url("../../assets/mosaico\ \(1\).png")'}}>
                 <NavbarBrand href="/">
                     <img 
-                        src='/logotipo.png'
+                        src='logotipo.png'
                         alt='Afro PE'
                         style={{
                             height: 60,
@@ -44,4 +44,4 @@ const Headers = (props) => {
 }
 
 
-export default Headers;
+export default Header;
