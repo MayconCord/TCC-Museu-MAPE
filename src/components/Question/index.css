@@ -1,0 +1,37 @@
+.question {
+    background-color: #b73414;
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 60%;
+    margin-bottom: 2rem;
+}
+
+.question p {
+    margin-bottom: 1rem;
+}
+
+.pergunta{
+    color:#fff;
+}
+
+
+.question h2 {
+    margin-bottom: 2rem;
+}
+
+.question button {
+    border: 2px solid #fff;
+    margin: 1rem;
+}
+
+@media only screen and (max-width: 500px){
+    .question{
+        width: 80%;
+    }
+    .question h2{
+        font-size: 20px;
+    }
+    .question p{
+        font-size: 14px;
+    }
+}

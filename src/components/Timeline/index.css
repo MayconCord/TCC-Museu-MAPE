@@ -1,6 +1,6 @@
 .main-timeline-4 {
     position: relative;
-    }
+}
 
 .main-timeline-4::after {
     content: "";
@@ -113,6 +113,14 @@
         #b73414, 
         #8a1b14
     );
+}
+
+.gradient-custom h4, p{
+    color: #fff!important
+}
+
+.gradient-custom-4 h4, p{
+    color: #fff!important
 }
 
 .gradient-custom-4 {

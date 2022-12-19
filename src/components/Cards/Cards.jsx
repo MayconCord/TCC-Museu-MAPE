@@ -13,13 +13,10 @@ function Cards() {
                     <Card.Img variant="top" src={Books} />
                     <Card.Body>
                         <div className="text-center">
-                            <Card.Title className="m-2">Recomendação de Livros</Card.Title>
+                            <Card.Title className="m-3">Recomendação de Livros</Card.Title>
+                            <Card.Text>Recomendação de livros de acordo com parâmetros pré-definidos pelo usuário.</Card.Text>
                         </div>
-                        <Card.Text>
-                        Some quick example text to build on the card title and make up the
-                        bulk of the card's content.
-                        </Card.Text>
-                        <div className="text-center">
+                        <div className="text-center m-3">
                             <Button variant="primary">SAIBA MAIS</Button>
                         </div>
                     </Card.Body>
@@ -30,13 +27,10 @@ function Cards() {
                     <Card.Img variant="top" src={Search} />
                     <Card.Body>
                         <div className="text-center">
-                            <Card.Title className="m-2">Materiais Complementares</Card.Title>
+                            <Card.Title className="m-3">Materiais Complementares</Card.Title>
+                            <Card.Text>Com o intuito de aprofundar os conhecimentos.</Card.Text>
                         </div>
-                        <Card.Text>
-                        Some quick example text to build on the card title and make up the
-                        bulk of the card's content.
-                        </Card.Text>
-                        <div className="text-center">
+                        <div className="text-center m-3">
                             <Button variant="primary">SAIBA MAIS</Button>
                         </div>
                     </Card.Body>
@@ -47,13 +41,10 @@ function Cards() {
                     <Card.Img variant="top" src={Fonts} />
                     <Card.Body>
                         <div className="text-center">
-                            <Card.Title className="m-2">Referências</Card.Title>
+                            <Card.Title className="m-3">Referências</Card.Title>
+                            <Card.Text>Materiais que foram utilizados para a construção do conteúdo deste site.</Card.Text>
                         </div>
-                        <Card.Text>
-                        Some quick example text to build on the card title and make up the
-                        bulk of the card's content.
-                        </Card.Text>
-                        <div className="text-center">
+                        <div className="text-center m-3">
                             <Button variant="primary">SAIBA MAIS</Button>
                         </div>
                     </Card.Body>

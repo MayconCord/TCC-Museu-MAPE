@@ -1,7 +1,7 @@
 import React from "react";
 import { Modal, Button } from "react-bootstrap";
 
-function Modal1(props){
+function Modal4(props){
     return(
         <div>
             <Modal
@@ -30,4 +30,4 @@ function Modal1(props){
     );
 }
 
-export default Modal1;
+export default Modal4;

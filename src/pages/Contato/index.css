@@ -1,0 +1,29 @@
+.contato{
+    height: 83.4vh;
+    padding-bottom: 2rem;
+}
+
+.contato h1, h5, label {
+    color: #8a1b14!important;
+}
+
+.contato p{
+    color: #8a1b14!important;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 500px){
+    .contato{
+        height: auto;
+        padding: 2rem;
+    }
+    .contato h1{
+        font-size: 26px;
+    }
+    .contato h5{
+        font-size: 18px;
+    }
+    .contato label{
+        font-size: 16px;
+    }
+}

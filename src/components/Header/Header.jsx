@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import './index.css';
+import Logo from '../../assets/logotipo.png';
 import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 import { Link } from 'react-router-dom';
+
 
 const Header = (props) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -10,10 +12,10 @@ const Header = (props) => {
 
     return (
         <div>
-            <Navbar className="navbar" dark expand="md" styles={{background : 'no-repeat center/cover url("../../assets/mosaico\ \(1\).png")'}}>
+            <Navbar className="navbar" dark expand="md">
                 <NavbarBrand href="/">
                     <img 
-                        src='logotipo.png'
+                        src={Logo}
                         alt='Afro PE'
                         style={{
                             height: 60,

@@ -1,0 +1,24 @@
+.sobre{
+    width: 100%;
+    color: #8a1b14!important;
+}
+
+.sub{
+    font-size: 18px!important;
+}
+
+.img-card{
+    width: 300px;
+}
+
+.text-card{
+    color: #b73414!important;
+}
+
+.sobre h1, h2, h3, h4, h5, p{
+    color: #8a1b14!important;
+}
+
+.text p{
+    color: #8a1b14!important;
+}
