@@ -1,27 +1,27 @@
-.login{
-    height: 78vh;
+.cadastro{
+    height: 100vh;
     padding-bottom: 2rem;
 }
 
-.login h1, h5, label {
+.cadastro h1, h5, label {
     color: #8a1b14!important;
 }
 
-.login p{
+.cadastro p{
     color: #8a1b14!important;
 }
 
 @media only screen and (max-width: 500px){
-    .login{
-        height: 80vh;
+    .cadastro{
+        height: 100%;
     }
-    .login h1{
+    .cadastro h1{
         font-size: 26px;
     }
-    .login h5{
+    .cadastro h5{
         font-size: 18px;
     }
-    .login label{
+    .cadastro label{
         font-size: 16px;
     }
 }

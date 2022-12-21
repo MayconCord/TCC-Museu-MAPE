@@ -1,5 +1,5 @@
 .option {
-    background-color: #fff;
+    background-color: #8a1b14;
     border-radius: 0.5rem;
     padding: 1rem;
     margin-bottom: 1rem;
@@ -9,7 +9,8 @@
 }
 
 .option p{
-    color: #b73414;
+    color: #fff!important;
+    opacity: 100%;
 }
 
 .option:hover {

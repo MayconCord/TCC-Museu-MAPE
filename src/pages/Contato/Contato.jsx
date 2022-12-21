@@ -6,7 +6,7 @@ function Contato() {
         <div className="contato">
             <div className="container">
                 <div className="p-3 text-center">
-                    <h1>Formulário para contato</h1>
+                    <h1 className="m-4">Formulário para contato</h1>
                     <h5 className="mt-5">Ficou com dúvida em alguma parte do conteúdo? Gostaria de tirar dúvidas ou relatar problemas com a utilização do sistema?
                         Utilize o fomrulário a baixo para entrar em contato com a nossa equipe.</h5>
                 </div>

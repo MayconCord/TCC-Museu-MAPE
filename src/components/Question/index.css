@@ -10,10 +10,10 @@
     margin-bottom: 1rem;
 }
 
-.pergunta{
-    color:#fff;
+.q{
+    color:#fff!important;
+    margin-bottom: 1.5rem;
 }
-
 
 .question h2 {
     margin-bottom: 2rem;

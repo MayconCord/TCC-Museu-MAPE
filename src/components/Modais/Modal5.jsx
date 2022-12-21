@@ -23,7 +23,7 @@ function Modal5(props){
                     </p>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button onClick={props.onHide}>Close</Button>
+                    <Button className="btn-dgd" onClick={props.onHide}>Close</Button>
                 </Modal.Footer>
             </Modal>
         </div>

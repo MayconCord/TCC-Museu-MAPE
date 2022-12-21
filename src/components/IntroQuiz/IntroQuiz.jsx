@@ -12,8 +12,11 @@ function IntroQuiz() {
                     <img src={quizImg} className="img-fluid" />
                 </div>
                 <div className="col-sm-4">
-                    <h1 className="m-3 align-text-bottom">Vamos testar os conhecimentos?</h1>
-                    <Link to="/quiz"><Button variant="primary">Iniciar Quiz</Button></Link> 
+                    <div className="text-intro-quiz">
+                        <h1 className="m-3 align-text-bottom">Vamos testar os conhecimentos?</h1>
+                        <p className='text-card sub'>Faça login no site e aproveite!</p>
+                        <Link to="/quiz"><Button className="btn-dgd">Iniciar Quiz</Button></Link> 
+                    </div>
                 </div>
                 <div className="col-sm-2"></div>
             </div>

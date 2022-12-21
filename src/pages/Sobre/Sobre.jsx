@@ -13,11 +13,11 @@ function Sobre() {
                     <h1>Sobre nós</h1>
                 </div>
                 <div className="m-5 mt-0 mb-0 text">
-                    <p>O Museu Afro-PE é o Trabalho de Conclusão do curso Técnico em Informática do Instituto Federal de Pernambuco - campus Garanhuns, pertencente aos discentes: Lara Emanuely, Lilian Oliveira e Maycon Cordeiro, sob as orientações de: </p>
+                    <p>O Museu Afro-PE é o Trabalho de Conclusão do curso Técnico em Informática do Instituto Federal de Pernambuco - campus Garanhuns, pertencente aos discentes: Lara Emanuely, Lilian Oliveira e Maycon Cordeiro. </p>
                 </div>
                 <div className="row">
                     <div className="col-sm-6">
-                        <div className="m-3 mt-5">
+                        <div className="m-3 mt-4">
                                 <Card className="">
                                     <Card.Img variant="top" />
                                     <Card.Body>
@@ -31,7 +31,7 @@ function Sobre() {
                         </div>
                     </div>
                     <div className="col-sm-6">
-                        <div className="m-3 mt-5 ">
+                        <div className="m-3 mt-4">
                                 <Card className="">
                                     <Card.Img variant="top" />
                                     <Card.Body>
@@ -58,7 +58,7 @@ function Sobre() {
                             <Card.Body>
                                 <div className="text-center">
                                     <Card.Title className="m-4">Lara Emanuely</Card.Title>
-                                    <Card.Text className="m-3 text-card">Estudante do 4 TI tarde</Card.Text>
+                                    <Card.Text className="m-3 text-card">Estudante do 4° TI tarde</Card.Text>
                                 </div>
                             </Card.Body>
                         </Card>
@@ -71,7 +71,7 @@ function Sobre() {
                             <Card.Body>
                                 <div className="text-center">
                                     <Card.Title className="m-4">Lilian Oliveira</Card.Title>
-                                    <Card.Text className="m-3 text-card">Estudante do 4 TI tarde</Card.Text>
+                                    <Card.Text className="m-3 text-card">Estudante do 4° TI tarde</Card.Text>
                                 </div>
                             </Card.Body>
                         </Card>
@@ -84,7 +84,7 @@ function Sobre() {
                             <Card.Body>
                                 <div className="text-center">
                                     <Card.Title className="m-4">Maycon Cordeiro</Card.Title>
-                                    <Card.Text className="m-3 text-card">Estudante do 4 TI tarde</Card.Text>
+                                    <Card.Text className="m-3 text-card">Estudante do 4° TI tarde</Card.Text>
                                 </div>
                             </Card.Body>
                         </Card>

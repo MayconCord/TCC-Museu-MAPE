@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import { createContext, useReducer, useState } from "react";
 import questions from "../data/questions";
 
 const STAGES = ["Start", "Playing", "End"];
@@ -111,10 +111,9 @@ const quizReducer = (state, action) => {
     }
     };
 
-export const QuizContext = createContext();
+export const QuizContext = createContext({});
 
 export const QuizProvider = ({ children }) => {
     const value = useReducer(quizReducer, initialState);
-    const qErradas = [];
     return <QuizContext.Provider value={value}>{children}</QuizContext.Provider>;
 };

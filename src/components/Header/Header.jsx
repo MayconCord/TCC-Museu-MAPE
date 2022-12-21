@@ -1,12 +1,18 @@
-import React, { useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './index.css';
 import Logo from '../../assets/logotipo.png';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
-import { Link } from 'react-router-dom';
-
+import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, NavbarText } from 'reactstrap';import { Link } from 'react-router-dom';
 
 const Header = (props) => {
     const [isOpen, setIsOpen] = useState(false);
+    const [user, setUser] = useState(null);
+
+    useEffect(()=> {
+        const storageUser = sessionStorage.getItem("@AuthFirebase:user");
+        if (storageUser){
+            setUser(storageUser);
+        }
+    }, [])
 
     const toggle = () => setIsOpen(!isOpen);
 
@@ -14,14 +20,7 @@ const Header = (props) => {
         <div>
             <Navbar className="navbar" dark expand="md">
                 <NavbarBrand href="/">
-                    <img 
-                        src={Logo}
-                        alt='Afro PE'
-                        style={{
-                            height: 60,
-                            width: 60
-                        }}
-                    />
+                    <img src={Logo} alt='Afro PE' style={{height: 70, width: 70}} />
                 </NavbarBrand>
                 <NavbarToggler onClick={toggle} />
                 <Collapse isOpen={isOpen} navbar>
@@ -39,6 +38,7 @@ const Header = (props) => {
                             <NavLink><Link to="/login" className="links">Login</Link></NavLink>
                         </NavItem>
                     </Nav>
+                    <NavbarText>Oi</NavbarText>
                 </Collapse>
             </Navbar>
         </div>

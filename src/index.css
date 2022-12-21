@@ -5,5 +5,7 @@
 }
 
 .btn-dgd{
-  background-color: linear-gradient(to right, );
+  background-color: linear-gradient(to right, #b73414, #8a1b14)!important;
+  border: none!important;
+  border-radius: 10px;
 }

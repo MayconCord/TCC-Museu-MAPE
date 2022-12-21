@@ -16,7 +16,7 @@ const Option = ({ option, selectOption, answer, hide }) => {
             ${hide ? "hide" : ""}
             `}
         >
-        <p>{option}</p>
+        <p className="text-quiz">{option}</p>
         </div>
     );
 };

@@ -11,19 +11,17 @@ function Modal1(props){
                 centered>
                 <Modal.Header closeButton>
                     <Modal.Title id="contained-modal-title-vcenter">
-                    Modal heading
                     </Modal.Title>
                 </Modal.Header>
-                <Modal.Body>
-                    <h4>Centered Modal</h4>
-                    <p>
-                    Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-                    dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-                    consectetur ac, vestibulum at eros.
-                    </p>
+                <Modal.Body className="p-4">
+                    <h4 className="mb-4">Início do Tráfico Atlântico</h4>
+                    <p className="text-card">Os escravizados eram transportados de seus países de origem para cá em condições insalubres: completamente amontoados nos porões de embarcações minúsculas, 
+                        sobrevivendo com escassos alimentos e sem nenhum tipo de higiene sanitária.</p>
+                    <p className="text-card">Os europeus lucravam com essa prática por meio da venda dos escravizados para senhores de engenho e fazendeiros. Quando chegavam a seus “destinos”, 
+                        eram-lhes impostas condições totalmente degradantes: não tinham acesso a algum tipo de alimentação decente, tampouco vestimentas adequadas.</p>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button onClick={props.onHide}>Close</Button>
+                    <Button onClick={props.onHide} className="btn-dgd">Close</Button>
                 </Modal.Footer>
             </Modal>
         </div>

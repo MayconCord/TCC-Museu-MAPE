@@ -3,7 +3,7 @@ import './index.css'
 
 function Intro() {
     return(
-        <div className="container p-5">
+        <div className="container p-5 pb-0">
             <div class="introduction-container">
                 <div class="introduction">
                     <h2 class="title">Olá, seja bem-vindo(a) ao Museu Afro PE!</h2>

@@ -24,7 +24,7 @@ const Question = () => {
                 Pergunta {quizState.currentQuestion + 1} de {quizState.questions.length}
             </p>
             <p>Assunto: {currentQuestion.assunto}</p>
-            <h2 className="pergunta q">{currentQuestion.question}</h2>
+            <h3 className="pergunta q">{currentQuestion.question}</h3>
             <div id="options-container">
                 {currentQuestion.options.map((option) => (
                 <Option
@@ -57,7 +57,5 @@ const Question = () => {
         </div>
     );
 };
-
-/**/
 
 export default Question;
