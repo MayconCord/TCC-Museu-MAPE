@@ -11,8 +11,9 @@ import Quiz from './pages/Quiz/Quiz'
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import PrivateRoutes from './routes';
-import { QuizContext } from './contexts/QuizContext';
 import { AuthProvider } from './contexts/AuthContext';
+import PainelAluno from './pages/Aluno/Aluno';
+import PainelProfessor from './pages/Professor/Professor';
 
 function App() {
 
@@ -31,7 +32,9 @@ function App() {
           <Route path="quiz" element={<PrivateRoutes />}>
             <Route path="/quiz" element={<Quiz />} />
           </Route>
-          <Route path="/recomendacao" element={<Recomendacao />}/>
+          <Route path="/painel" element={<PainelAluno />} />
+          <Route path="/professor" element={<PainelProfessor />} />
+
         </Routes>
         </AuthProvider>
         <Footer />

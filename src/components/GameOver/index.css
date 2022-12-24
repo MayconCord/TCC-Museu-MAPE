@@ -14,7 +14,16 @@
     color: #8a1b14;
 }
 
+.texto-escuro{
+    color:#8a1b14!important;
+    font-size: 18px;
+}
+
 #gameover img {
     margin: 2rem auto;
     height: 200px;
+}
+
+.btn-dgd{
+    width: 200px;
 }

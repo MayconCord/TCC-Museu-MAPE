@@ -1,45 +1,32 @@
 import React, { useContext, useEffect, useState } from 'react';
 import './index.css';
 import Logo from '../../assets/logotipo.png';
-import { Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, NavbarText } from 'reactstrap';import { Link } from 'react-router-dom';
+import { Navbar, Container, Nav, NavLink } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthContext';
 
 const Header = (props) => {
     const [isOpen, setIsOpen] = useState(false);
-    const [user, setUser] = useState(null);
-
-    useEffect(()=> {
-        const storageUser = sessionStorage.getItem("@AuthFirebase:user");
-        if (storageUser){
-            setUser(storageUser);
-        }
-    }, [])
 
     const toggle = () => setIsOpen(!isOpen);
 
     return (
         <div>
-            <Navbar className="navbar" dark expand="md">
-                <NavbarBrand href="/">
-                    <img src={Logo} alt='Afro PE' style={{height: 70, width: 70}} />
-                </NavbarBrand>
-                <NavbarToggler onClick={toggle} />
-                <Collapse isOpen={isOpen} navbar>
-                    <Nav className="navbar-text" navbar>
-                        <NavItem>
-                            <NavLink><Link to="/" className="links">Início</Link></NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink><Link to="/sobre" className="links">Sobre nós</Link></NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink><Link to="/contato" className="links">Contato</Link></NavLink>
-                        </NavItem>
-                        <NavItem>
-                            <NavLink><Link to="/login" className="links">Login</Link></NavLink>
-                        </NavItem>
+            <Navbar className="navbar" expand="md">
+                <Container>
+                    <Navbar.Brand> 
+                        <Link to="/"><img src={Logo} alt='Afro PE' style={{height: 70, width: 70}} /></Link>
+                    </Navbar.Brand>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="me-auto">
+                        <Nav.Link><Link to="/" className="links">Início</Link></Nav.Link>
+                        <Nav.Link><Link to="/sobre" className="links">Sobre nós</Link></Nav.Link>
+                        <Nav.Link><Link to="/contato" className="links">Contato</Link></Nav.Link>
+                        <Nav.Link id="login-link"><Link to="/login" className="links">Login</Link></Nav.Link>
                     </Nav>
-                    <NavbarText>Oi</NavbarText>
-                </Collapse>
+                    </Navbar.Collapse>
+                </Container>
             </Navbar>
         </div>
     );

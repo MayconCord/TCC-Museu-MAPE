@@ -2,8 +2,8 @@
     background-color: #b73414;
     border-radius: 1rem;
     padding: 2rem;
-    width: 60%;
-    margin-bottom: 2rem;
+    width: 50vw;
+    height: auto;
 }
 
 .question p {
@@ -26,12 +26,16 @@
 
 @media only screen and (max-width: 500px){
     .question{
-        width: 80%;
+        width: 90%;
+        padding: 1rem;
     }
-    .question h2{
+    .question h3{
         font-size: 20px;
     }
     .question p{
         font-size: 14px;
+    }
+    .btn-dgd{
+        font-size: 18px;
     }
 }

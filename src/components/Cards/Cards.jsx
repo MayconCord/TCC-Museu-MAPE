@@ -3,6 +3,8 @@ import { Card, Button } from 'react-bootstrap';
 import Books from '../../assets/books.png';
 import Search from '../../assets/search.png';
 import Fonts from '../../assets/fonts.png';
+import { Link } from 'react-router-dom';
+import './index.css';
 
 function Cards() {
     return(
@@ -18,7 +20,7 @@ function Cards() {
                             <Card.Text className="text-card sub" >Livros recomendados de acordo com as dificuldades no quiz.</Card.Text>
                         </div>
                         <div className="text-center m-3">
-                            <Button className='btn-dgd'>SAIBA MAIS</Button>
+                            <Button className='btn-dgd-cards'>SAIBA MAIS</Button>
                         </div>
                     </Card.Body>
                     </Card>
@@ -32,7 +34,7 @@ function Cards() {
                             <Card.Text className="text-card sub">Com o intuito de aprofundar os conhecimentos.</Card.Text>
                         </div>
                         <div className="text-center m-3">
-                            <Button className="btn-dgd">SAIBA MAIS</Button>
+                            <Button className="btn-dgd-cards">SAIBA MAIS</Button>
                         </div>
                     </Card.Body>
                     </Card>
@@ -46,7 +48,7 @@ function Cards() {
                             <Card.Text className="text-card sub">Materiais que foram utilizados para a construção do conteúdo deste site.</Card.Text>
                         </div>
                         <div className="text-center m-3">
-                            <Button className="btn-dgd">SAIBA MAIS</Button>
+                            <Button className="btn-dgd-cards">SAIBA MAIS</Button>
                         </div>
                     </Card.Body>
                     </Card>

@@ -1,0 +1,18 @@
+.btn-intro-quiz{
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 0.8rem 1.5rem;
+    color: #ffff;
+    background: linear-gradient(
+        to right,
+        #37895d, 
+        #0a3c7f
+    );
+    border-radius: 1rem;
+    border: none;
+}
+
+.img-intro-quiz{
+    width: 350px!important;
+}

@@ -1,7 +1,7 @@
 import { createContext, useReducer, useState } from "react";
 import questions from "../data/questions";
 
-const STAGES = ["Start", "Playing", "End"];
+const STAGES = ["Start", "Playing", "End", "Recomendation"];
 
 const initialState = {
     gameStage: STAGES[0],
@@ -13,8 +13,6 @@ const initialState = {
     optionToHide: null,
     assuntosErrados: [],
 };
-
-console.log(initialState);
 
 const quizReducer = (state, action) => {
     switch (action.type) {
@@ -51,6 +49,14 @@ const quizReducer = (state, action) => {
             };
         }
 
+        case "SHOW_RECOMENDATION" : {
+            return{
+                ...state,
+                gameStage: STAGES[3],
+                assuntosErrados: state.assuntosErrados,
+            };
+        }
+
         case "NEW_GAME": {
             console.log(questions);
             console.log(initialState);
@@ -63,16 +69,16 @@ const quizReducer = (state, action) => {
             const answer = action.payload.answer;
             const option = action.payload.option;
             let correctAnswer = 0;
-            let a = "";
+            let a = [];
 
             if (answer === option) correctAnswer = 1;
-            if (answer !== option ) a = action.payload.assunto;
+            if (answer !== option ) a = a + action.payload.assunto;
 
             return {
                 ...state,
                 score: state.score + correctAnswer,
                 answerSelected: option,
-                assuntosErrados: state.assuntosErrados +','+ a,
+                assuntosErrados: state.assuntosErrados +"/"+  a,
             };
         }
 

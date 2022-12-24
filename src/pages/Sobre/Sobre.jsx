@@ -9,7 +9,7 @@ function Sobre() {
     return(
         <div className="sobre">
             <div className="container">
-                <div className="p-5 pb-2">
+                <div className="p-3 pb-2 text-center">
                     <h1>Sobre nós</h1>
                 </div>
                 <div className="m-5 mt-0 mb-0 text">

@@ -1,32 +1,29 @@
 import { useContext, useEffect } from "react";
 import { QuizContext } from "../../contexts/QuizContext";
+import { AuthContext } from '../../contexts/AuthContext';
 import WellDone from "../../assets/img/welldone.svg";
-import Recomendacao from "../../pages/Recomendacao/Recomendacao";
 import "./index.css";
 
 const GameOver = () => {
 
     const [quizState, dispatch] = useContext(QuizContext);
-    const erros = quizState.assuntosErrados.split(',');
-    const errosFiltrados = erros.filter(function (i) {
-        return i;
-    });
+    const { user, salvaPontuacao } = useContext(AuthContext);
+    const erros = quizState.assuntosErrados;
 
     useEffect(()=>{
-        setErros(quizState.assuntosErrados)
-    }, []);
+        salvaPontuacao(quizState.score);
+    }, [])
 
     return (
         <div id="gameover">
             <h2>Fim de jogo!</h2>
-            <p>Pontuação: {quizState.score}</p>
-            <p>Você acertou {quizState.score} de {quizState.questions.length}{" "}
+            <p className="texto-escuro">Pontuação: <b>{quizState.score}</b></p>
+            <p className="texto-escuro">Você acertou <b>{quizState.score}</b> de <b>{quizState.questions.length}</b>{" "}
                 perguntas.</p>
-            <p>Você errou questões do seguintes assuntos: {errosFiltrados}</p>
+            <p className="texto-escuro">Para visualizar as recomendações, basta clicar no botão abaixo.</p>
             <img src={WellDone} alt="Fim do Quiz" />
-            <button className="btn-dgd" onClick={() => dispatch({ type: "NEW_GAME" })}>Reiniciar</button>
-            <div className="mt-4">
-                <Recomendacao busca={errosFiltrados} />
+            <div className="text-center">
+            <button className="btn-dgd" onClick={() => dispatch({ type: "SHOW_RECOMENDATION" })}>Recomendações</button>
             </div>
         </div>
     );

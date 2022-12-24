@@ -1,3 +1,34 @@
 .text-card p{
     color: #8a1b14!important;
 }
+
+.btn-dgd-cards{
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 0.8rem 1.5rem;
+    color: #ffff;
+    background: linear-gradient(
+        to right,
+        #37895d, 
+        #0a3c7f
+    );
+    border-radius: 1rem;
+    border: none;
+}  
+
+.btn-dgd-cards:hover{
+    background: linear-gradient(
+        to right,
+        #0a3c7f
+        #37895d, 
+    );
+}
+
+@media only screen and (max-width: 500px){
+    .btn-dgd-cards{
+        width: 70%;
+        font-size: 18px;
+    }
+}
+

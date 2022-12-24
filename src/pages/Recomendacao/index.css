@@ -1,0 +1,16 @@
+.texto-escuro p{
+    color: #8a1b14!important;
+}
+
+.recomend{
+    display: block;
+    padding: 2rem;
+}
+
+.container-cards{
+    height: 100%;
+}
+
+.card-text{
+    color: #8a1b14!important;
+}

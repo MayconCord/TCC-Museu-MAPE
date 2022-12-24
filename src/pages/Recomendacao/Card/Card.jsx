@@ -16,11 +16,13 @@ function Card ({ book }) {
                     if(thumbnail!= undefined && amount !=undefined){
                         return (
                             <>
-                            <div className="card col-sm-3" onClick={()=>{setShow(true);setItem(item)}}>
-                                <img src={thumbnail} alt="" className="card-img-top" />
+                            <div className="card col-sm-2" onClick={()=>{setShow(true);setItem(item)}}>
+                                <img src={thumbnail} alt="" className="card-img-top img-fluid" />
                                 <div className="card-body">
-                                    <h3 className="title">{item.volumeInfo.title}</h3>
-                                    <p className="card-text">&#8377;{amount}</p>
+                                    <h5 className="title">{item.volumeInfo.title}</h5>
+                                    <p className="card-text">Autor(es): {item.volumeInfo.authors}</p>
+                                    <p className="card-text">Publicação: {item.volumeInfo.publishedDate}</p>
+                                    <p className="card-text">{item.volumeInfo.pageCount} páginas</p>
                                 </div>
                             </div>
                                 <Modal show={show} item={bookItem} onClose={()=>setShow(false)}/>

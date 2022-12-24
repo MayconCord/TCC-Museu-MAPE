@@ -18,7 +18,7 @@ const data = [
                 "Desfrutou de influências puramente europeias, que trouxeram somente progresso e tecnologia para a nação.",
                 "Teve um processo que pode ser considerado homogêneo, uma vez que apenas a cultura indígena contribuiu para isso."],
             answer: "Foi formada pela mistura de várias culturas, incluindo a indígena e africana.",
-            assunto: "cultura afro brasileira",
+            assunto: "historia e cultura afro brasileira",
             },
             {
             question: "Sobre a história e legado do Maracatu, é correto afirmar:",
@@ -29,7 +29,7 @@ const data = [
                 "É uma manifestação herdada da cultura africana, retomando vivências e celebrações desse povo."
             ],
             answer: "É uma manifestação herdada da cultura africana, retomando vivências e celebrações desse povo.",
-            assunto: "maracatu",
+            assunto: "maracatu e a cultura afro brasileira",
 
             },
             {
@@ -41,7 +41,7 @@ const data = [
                 "Apesar de sofrerem muitos tipos de estigmatização, tiveram suas práticas consolidadas no Brasil, e hoje não sofrem mais com os problemas de antes."
             ],
             answer: "Sofreram muitos tipos de discriminação, e foram (e ainda são) vistas com “maus olhos” pela sociedade.",
-            assunto: "religião afro brasileira",
+            assunto: "religiões de matriz africana no Brasil",
 
             },
             {
@@ -54,7 +54,7 @@ const data = [
                 "Possibilitar a adoração de santos católicos.",
             ],
             answer: "Preservar as crenças e a sua relação com o sagrado.",
-            assunto: "religião afro brasileira",
+            assunto: "religiões de matriz africana no Brasil",
             }, 
             {
                 question:
@@ -66,7 +66,7 @@ const data = [
                     "Maracatu real.",
                 ],
                 answer: "Maracatu nação.",
-                assunto: "maracatu",
+                assunto: "maracatu e a cultura afro brasileira",
             },
             {
                 question:
@@ -78,7 +78,7 @@ const data = [
                     "Ocorreu no contexto dos primeiros passos da urbanização no país.",
                 ],
                 answer: "Não houveram muitas movimentações na época, devido ao contexto harmônico do Brasil.",
-                assunto: "frevo e capoeira",
+                assunto: " historia do frevo e capoeira",
             },
             {
                 question:
@@ -90,7 +90,7 @@ const data = [
                     "Para não levantar suspeitas.",
                 ],
                 answer: "Para não levantar suspeitas.",
-                assunto: "capoeira",
+                assunto: "historia da capoeira",
             },
             {
                 question:
@@ -102,7 +102,7 @@ const data = [
                     "Flauta.",
                 ],
                 answer: "Sombrinha.",
-                assunto: "frevo",
+                assunto: "historia do frevo",
             },
             {
                 question:
@@ -114,7 +114,7 @@ const data = [
                     "Se relaciona com mais força ao carnaval, sendo uma manifestação cultural restrita a esse evento.",
                 ],
                 answer: "Se relaciona tanto à luta como à dança, misturando diversão e um forte elemento de defesa.",
-                assunto: "capoeira",
+                assunto: "historia da capoeira",
             },
 ];
 
