@@ -12,6 +12,11 @@
     font-size: 18px;
 }
 
+.links:hover{
+    color: #fff;
+    text-shadow: 5px 5px 5px black;
+}
+
 .btn-logout{
     background-color: #fff!important;
     padding: .7rem;

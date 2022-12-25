@@ -1,9 +1,8 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './index.css';
 import Logo from '../../assets/logotipo.png';
 import { Navbar, Container, Nav, NavLink } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import { AuthContext } from '../../contexts/AuthContext';
 
 const Header = (props) => {
     const [isOpen, setIsOpen] = useState(false);

@@ -3,8 +3,45 @@
 }
 
 .painel ṕ{
-    color: #b73414!important;
+    color: #0a3c7f!important;
 }
 
-.thead{
+.painel h2{
+    color: #0a3c7f!important;
+}
+
+.title-table{
+    font-weight: bold;
+    font-size: 20px;
+    color: #0a3c7f;
+}
+
+.col-title{
+    background-color: #fff;
+}
+
+.listagem-alunos{
+    border: 1px #0a3c7f;
+}
+
+.listagem-alunos td {
+    color: #0a3c7f;
+    font-size: 18px;
+}
+
+.title-painel{
+    color: #0a3c7f;
+}
+
+@media only screen and (max-width: 500px){
+    .painel{
+        height: 100%;
+    }
+    .title-table{
+        font-weight: bold;
+        font-size: 15px;
+    }
+    .listagem-alunos td{
+        font-size: 14px;
+    }
 }

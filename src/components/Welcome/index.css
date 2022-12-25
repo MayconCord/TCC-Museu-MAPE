@@ -1,21 +1,23 @@
 #welcome {
     text-align: center;
     max-width: 500px;
-    height: 100vh;
 }
 
 .text-quiz {
     color: #b73414!important;
 }
 
-#welcome h2, #welcome p {
+.welcome h2, p {
     margin-bottom: 1rem;
-}
-
-#welcome p {
-    color: #8a1b14;
+    color: #b73414;
 }
 
 #welcome img {
     margin-top: 2rem;
+}
+
+.welcome.btn-dgd-quiz{
+    color: #fff;
+    background-color: linear-gradient(to right,#37895d, #0a3c7f)!important;
+
 }

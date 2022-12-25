@@ -101,5 +101,16 @@ export const AuthProvider = ({ children }) => {
         return data;
     }
 
-    return <AuthContext.Provider value={{user, setUser, signed: !!user , cadastro, login, e, c, cadErro, cadSucess, salvaDados, errosQuiz, setErrosQuiz, salvaPontuacao, logout, listaAlunos }}>{children}</AuthContext.Provider>
+    const recoverPassword = (email) => {
+        var res = "";
+        auth.sendPasswordResetEmail(email).then(() => {
+            console.log(email)
+            console.log("Email de recuperação enviado! Verifique sua caixa de entrada");
+        }).catch((error) => {
+            console.log(error);
+            res = error;
+        });
+    }
+
+    return <AuthContext.Provider value={{user, signed: !!user , cadastro, login, e, c, cadErro, cadSucess, salvaDados, errosQuiz, setErrosQuiz, salvaPontuacao, logout, recoverPassword }}>{children}</AuthContext.Provider>
 }

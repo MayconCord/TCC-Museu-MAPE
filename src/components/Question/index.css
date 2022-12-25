@@ -1,9 +1,16 @@
 .question {
-    background-color: #b73414;
+    background: linear-gradient(to right, #b73414, #8a1b14);
     border-radius: 1rem;
     padding: 2rem;
+    margin: 1.1rem;
     width: 50vw;
-    height: auto;
+    height: 100%;
+}
+
+.btn-dgd-quiz{
+    background-color: linear-gradient(to right, #b73414, #8a1b14)!important;
+    border: none!important;
+    border-radius: 10px;
 }
 
 .question p {
@@ -24,13 +31,31 @@
     margin: 1rem;
 }
 
+@media only screen and (max-width: 1300px) and (min-width: 500px){
+    .question{
+        width: 90%;
+        margin: 3rem;
+        height: auto;
+    }
+    .question h3{
+        font-size: 22px;
+    }
+    .question p{
+        font-size: 14px;
+    }
+    .btn-dgd{
+        font-size: 18px;
+    }
+}
+
 @media only screen and (max-width: 500px){
     .question{
         width: 90%;
         padding: 1rem;
+        height: auto;
     }
     .question h3{
-        font-size: 20px;
+        font-size: 18px;
     }
     .question p{
         font-size: 14px;

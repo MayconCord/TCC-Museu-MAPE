@@ -47,7 +47,7 @@ const Question = () => {
                     <p>{currentQuestion.tip}</p>
                 )}
                 {quizState.answerSelected && (
-                    <button className="btn-dgd" id="proxima-questao" onClick={() => dispatch({ type: "CHANGE_QUESTION" })}>
+                    <button className="btn-dgd-quiz" id="proxima-questao" onClick={() => dispatch({ type: "CHANGE_QUESTION" })}>
                     Continuar
                     </button>
                 )}

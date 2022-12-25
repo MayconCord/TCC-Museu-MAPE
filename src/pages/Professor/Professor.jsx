@@ -6,8 +6,10 @@ import './index.css';
 function PainelProfessor() {
 
     const [data, setData] = useState([]);
+    const [turmaValue, setTurmaValue] = useState();
 
     const fetchData = async (turma) => {
+        setTurmaValue(turma);
         let list = [];
         await db.collection("alunos").where("turma", "==", turma).get().then((querySnapshot) => {
             querySnapshot.forEach((doc) => {
@@ -25,10 +27,10 @@ function PainelProfessor() {
 
     return(
         <div className="painel">
-            <div className="text-center">
+            <div className="">
                 <div className="container">
-                <h1 className="p-5">Painel do Professor</h1>
-                <p text="text-painel">Aqui estão as turmas cadastradas no museu. Para ver os detalhes da turma, clique em "VER DETALHES".</p>
+                <h1 className="text-center p-5 pb-0">Painel do Professor</h1>
+                <h5 className="p-5 pt-3 pb-2 text-painel">Aqui estão as turmas cadastradas no museu. Para ver os detalhes da turma, clique em "VER DETALHES".</h5>
 
                 <div className="row">
                     <div className="col-sm-4 p-3">
@@ -47,7 +49,7 @@ function PainelProfessor() {
                         <Card className="">
                         <Card.Body>
                             <div className="text-center text-card">
-                            <h3 className="m-4">TURMA</h3>
+                            <h3 className="m-4">3TIM</h3>
                             </div>
                             <div className="text-center m-3">
                                 <Button className="btn-dgd-cards" onClick={() => fetchData("3TIM")}>VER DETALHES</Button>
@@ -59,7 +61,7 @@ function PainelProfessor() {
                         <Card className="">
                         <Card.Body>
                             <div className="text-center text-card">
-                                <h3 className="m-4">TURMA</h3>
+                                <h3 className="m-4">3TMAT</h3>
                             </div>
                             <div className="text-center m-3">
                                 <Button className="btn-dgd-cards" onClick={() => fetchData("3TIT")}>VER DETALHES</Button>
@@ -68,31 +70,34 @@ function PainelProfessor() {
                         </Card>
                     </div>
                 </div>
-                {
-                    data.map(user => {
-                        return(
-                            <div className="container p-5">
-                                <h2>TURMA</h2>
-                                <table class="table">
-                                    <thead className="thead">
-                                        <tr>
-                                        <th scope="col">Nome</th>
-                                        <th scope="col">Email</th>
-                                        <th scope="col">Pontuacao</th>
+                            <div className="p-4">
+                                <h5 className="p-4 pt-0 pb-0">Escolha uma turma para listar os dados.</h5>
+                                <h2 className="p-4 text-center title-painel"> Turma: {turmaValue}</h2>
+                                <div className="table-responsive-sm">
+                                <table class="table listagem-alunos">
+                                    <thead className="">
+                                        <tr className="col-title">
+                                            <th scope="col" className="title-table text-center">Nome</th>
+                                            <th scope="col" className="title-table text-center">Email</th>
+                                            <th scope="col" className="title-table text-center">Pontuação</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                        <td>{user.nome}</td>
-                                        <td>{user.email}</td>
-                                        <td>{user.pontuacao}</td>
-                                        </tr>
+                                        {
+                                            data.map(user => {
+                                                return(
+                                                    <tr className="table-data">
+                                                        <td>{user.nome}</td>
+                                                        <td>{user.email}</td>
+                                                        <td>{user.pontuacao}</td>
+                                                    </tr>
+                                                );
+                                            })
+                                        }
                                     </tbody>
                                 </table>
+                                </div>
                             </div>
-                        )
-                    })
-                }
                 </div>
             </div>
         </div>

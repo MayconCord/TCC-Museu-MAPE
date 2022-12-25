@@ -45,7 +45,7 @@ function Cards() {
                     <Card.Body>
                         <div className="text-center text-card">
                             <Card.Title className="m-3">Referências</Card.Title>
-                            <Card.Text className="text-card sub">Materiais que foram utilizados para a construção do conteúdo deste site.</Card.Text>
+                            <Card.Text className="text-card sub">Materiais utilizados para a construção do museu.</Card.Text>
                         </div>
                         <div className="text-center m-3">
                             <Button className="btn-dgd-cards">SAIBA MAIS</Button>

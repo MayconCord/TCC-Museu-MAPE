@@ -7,12 +7,25 @@ import './index.css';
 
 function Login() {
 
-    const [email, setEmail] = useState("");
+    const [email, setEmail] = useState();
     const [password, setPassword] = useState("");
     const [show, setShow] = useState(false);
     const [showS, setShowS] = useState(false);
+    const [showErrorRec, setShowErrorRec] = useState(false);
+    const [respostaRec, setRespostaRec] = useState("");
 
-    const { login, e, c } = useContext(AuthContext);
+    const { login, e, c, recoverPassword } = useContext(AuthContext);
+
+    const handleRecoverPswd = () => {
+        if(!email){
+            setRespostaRec("Preencha o campo de email!");
+            setShowErrorRec(true);
+        } else {
+            recoverPassword(email);
+            setRespostaRec("Email de recuperação enviado!");
+            setShowErrorRec(true);
+        }
+    }
 
     useEffect(() => {
         if(e){
@@ -54,12 +67,13 @@ function Login() {
                                 <p>Ainda não possui uma conta? <Link to="/cadastro" id="cadastro-button">Crie uma clicando aqui.</Link></p>
                             </div>
                             <div className="m-3">
-                                <p>Esqueceu a senha? <Link onClick={() => {}} id="recover-pswd">Recupere-a clicando aqui.</Link></p> 
+                                <p>Esqueceu a senha? <Link onClick={() => {handleRecoverPswd()}} id="recover-pswd">Recupere-a clicando aqui.</Link></p> 
                             </div>
                         </div>
                         <div className="mt-4">
                             <Alert show={show} key="danger" variant="danger">Ocorreu um problema, tente novamente. {e}</Alert>
                             <Alert show={showS} key="success" variant="success">{c}</Alert>
+                            <Alert show={showErrorRec} key="warning" variant="warning">{respostaRec}</Alert>
                         </div>
                     </form>
                 </div>

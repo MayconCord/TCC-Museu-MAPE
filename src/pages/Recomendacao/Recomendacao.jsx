@@ -44,18 +44,26 @@ function Recomendacao(){
     }
 
     return(
-        <div className="recomend mb-4">
-            <div>
-                <h1>Recomendação de livros</h1>
-                <div className="m-4 texto-escuro">{message}</div>
-            </div>
-
-            <div className="container-cards">
-                <div className="row">
-                    <Card book={bookData}/>
+        <section className="booklist">
+            <div className="container">
+                <div className="section-title">
+                    <h2 className='pb-5'>Recomendação de livros</h2>
+                    <p>{message}</p>
+                </div>
+                <div className="booklist-content grid">
+                    {
+                        bookData.map((item, index) => {
+                            let thumbnail = item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.smallThumbnail;
+                            if(thumbnail!= undefined){
+                                return(
+                                    <Card key={index} {...item} />
+                                )
+                            }
+                        })
+                    }
                 </div>
             </div>
-        </div>
+        </section>
     );
 }
 

@@ -18,10 +18,12 @@ function QuizApp() {
         <div className="body">
             <div className="App">
                 <h1>Quiz Afro PE</h1>
+                <div className="content-quiz">
                 {quizState.gameStage === "Start" && <Welcome />}
                 {quizState.gameStage === "Playing" && <Question />}
                 {quizState.gameStage === "End" && <GameOver />}
                 {quizState.gameStage === "Recomendation" && <Recomendacao />}
+                </div>
             </div>
         </div>
 

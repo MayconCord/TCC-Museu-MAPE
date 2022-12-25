@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Modal({show,item,onClose}) {
+function ModalDetalhes({show,item,onClose}) {
     if(!show){
         return null;
     }
@@ -28,4 +28,4 @@ function Modal({show,item,onClose}) {
     )
 }
 
-export default Modal;
+export default ModalDetalhes;
