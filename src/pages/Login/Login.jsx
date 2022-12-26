@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Button } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import { Alert } from "react-bootstrap";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 import { AuthContext } from "../../contexts/AuthContext";
 import './index.css';
 
@@ -49,7 +50,8 @@ function Login() {
 
     return(
         <div className="login">
-            <div className="container">
+            <Header/>
+            <div className="container login-area">
                 <div className="m-4">
                     <form method="POST" className="form">
                         <h1 className="p-3 text-center">Login Aluno</h1>
@@ -78,6 +80,7 @@ function Login() {
                     </form>
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }

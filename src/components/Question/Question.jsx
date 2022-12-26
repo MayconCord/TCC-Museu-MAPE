@@ -22,7 +22,7 @@ const Question = () => {
     return (
             <div id="question" className="question">
                 <p className="pergunta">
-                    Pergunta {quizState.currentQuestion + 1} de {quizState.questions.length}
+                    Pergunta <b>{quizState.currentQuestion + 1}</b> de <b>{quizState.questions.length}</b>
                 </p>
                 <h3 className="pergunta q">{currentQuestion.question}</h3>
                 <div id="options-container">

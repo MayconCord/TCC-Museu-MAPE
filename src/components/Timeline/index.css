@@ -13,6 +13,10 @@
     margin-left: -3px;
 }
 
+.title-timeline, .text-timeline{
+    color: #fff!important;
+}
+
 .timeline-4 {
     position: relative;
     background-color: inherit;

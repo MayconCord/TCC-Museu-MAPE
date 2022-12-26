@@ -15,7 +15,6 @@ function Timeline() {
 
 
     useEffect(() => {
-        function showModal1(){}
         const tema1 = document.getElementById("tema1");
         tema1.addEventListener('click', () => {setModalShow(true)});
         const tema3 = document.getElementById("tema3");
@@ -33,8 +32,8 @@ function Timeline() {
                     <div class="card gradient-custom" id="tema1" >
                         <div class="card-body p-4">
                         <i class="fas fa-brain fa-2x mb-3"></i>
-                        <h4>Início do Tráfico Atlântico</h4>
-                        <p>Em meados do século XVI, o comércio de africanos 
+                        <h4 className='title-timeline'>Início do Tráfico Atlântico</h4>
+                        <p className='text-timeline'>Em meados do século XVI, o comércio de africanos 
                             escravizados se tornava um negócio lucrativo para os portugueses.
                         </p>
                         </div>
@@ -44,8 +43,8 @@ function Timeline() {
                     <div class="card gradient-custom-4" id="tema2">
                         <div class="card-body p-4">
                         <i class="fas fa-camera fa-2x mb-3"></i>
-                        <h4>A resistência</h4>
-                        <p>O povo africano, mesmo que brutalmente reprimido, continuou praticando  suas crenças, cultuando suas religiões,
+                        <h4 className='title-timeline'>A resistência</h4>
+                        <p className='text-timeline'>O povo africano, mesmo que brutalmente reprimido, continuou praticando  suas crenças, cultuando suas religiões,
                             e passaram esses costumes de geração em geração.
                         </p>
                         </div>
@@ -55,8 +54,8 @@ function Timeline() {
                     <div class="card gradient-custom" id="tema3">
                         <div class="card-body p-4">
                         <i class="fas fa-campground fa-2x mb-3"></i>
-                        <h4>Religião e Música</h4>
-                        <p>Podemos dizer que as religiões africanas estiveram no Brasil desde que o povo negro aqui chegou. Lembrando que não existia uma 
+                        <h4 className='title-timeline'>Religião e Música</h4>
+                        <p className='text-timeline'>Podemos dizer que as religiões africanas estiveram no Brasil desde que o povo negro aqui chegou. Lembrando que não existia uma 
                                         homogeneidade religiosa, os escravizados tinham diferentes religiões. A música está totalmente vinculada aos rituais religiosos africanos. 
                         </p>
                         </div>
@@ -66,8 +65,8 @@ function Timeline() {
                     <div class="card gradient-custom-4" id="tema4">
                         <div class="card-body p-4">
                         <i class="fas fa-sun fa-2x mb-3"></i>
-                        <h4>Maracatu</h4>
-                        <p>Uma das primeiras expressões explícitas de vivências dos povos negros nos seus países de origem, representando incialmente a coroação 
+                        <h4 className='title-timeline'>Maracatu</h4>
+                        <p className='text-timeline'>Uma das primeiras expressões explícitas de vivências dos povos negros nos seus países de origem, representando incialmente a coroação 
                                         de reis do Congo. Essa prática foi incrementada com o passar do tempo.</p>
                         </div>
                     </div>
@@ -76,8 +75,8 @@ function Timeline() {
                     <div class="card gradient-custom" id="tema5">
                         <div class="card-body p-4">
                         <i class="fas fa-palette fa-2x mb-3"></i>
-                        <h4>Capoeira e Frevo</h4>
-                        <p>A capoeira era uma luta desenvolvida pelos africanos, vezes disfarçada de brincadeira, influenciou diretamente o frevo que, era uma mistura 
+                        <h4 className='title-timeline'>Capoeira e Frevo</h4>
+                        <p className='text-timeline'>A capoeira era uma luta desenvolvida pelos africanos, vezes disfarçada de brincadeira, influenciou diretamente o frevo que, era uma mistura 
                                     de dança, luta e música, foi uma importante ferramenta de resistência do povo negro à violência imposta pela sociedade da época.
                         </p>
                         </div>

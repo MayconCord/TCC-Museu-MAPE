@@ -5,14 +5,12 @@ import Sobre from './pages/Sobre/Sobre';
 import Login from './pages/Login/Login';
 import Cadastro from './pages/Cadastro/Cadastro'
 import Maracatu from './pages/Conteudo/Maracatu';
-import Recomendacao from './pages/Recomendacao/Recomendacao';
 import Home from './pages/Home/Home';
-import Quiz from './pages/Quiz/Quiz'
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
+import Quiz from './pages/Quiz/Quiz';
+import Materiais from './pages/Conteudo/Materiais';
+import Referencias from './pages/Conteudo/Referências';
 import PrivateRoutes from './routes';
 import { AuthProvider } from './contexts/AuthContext';
-import PainelAluno from './pages/Aluno/Aluno';
 import PainelProfessor from './pages/Professor/Professor';
 
 function App() {
@@ -20,7 +18,6 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Header />
         <AuthProvider>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -32,12 +29,11 @@ function App() {
           <Route path="quiz" element={<PrivateRoutes />}>
             <Route path="/quiz" element={<Quiz />} />
           </Route>
-          <Route path="/painel" element={<PainelAluno />} />
+          <Route path="/materiais" element={<Materiais />} />
           <Route path="/professor" element={<PainelProfessor />} />
-
+          <Route path="/referencias" element={<Referencias/>} />
         </Routes>
         </AuthProvider>
-        <Footer />
       </BrowserRouter>
     </>
   );

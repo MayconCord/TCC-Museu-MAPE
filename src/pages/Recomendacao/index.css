@@ -45,6 +45,7 @@
 }
 .book-item-info{
     margin-top: 2rem;
+    color: #0a3c7f;
 }
 .book-item-info-item.title{
     line-height: 1.4;
@@ -70,6 +71,19 @@
 
 .text-capitalize {
     font-weight: bold;
+}
+
+.mensagem{
+    color: #aaa;
+}
+
+.section-title h2{
+    color: #0a3c7f!important;
+}
+
+.section-title p {
+    color: #0a3c7f!important;
+    font-size: 18px;
 }
 
 @media screen and (min-width: 600px){

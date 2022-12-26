@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import './index.css';
 import { Alert } from "react-bootstrap";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 import emailjs from '@emailjs/browser';
 
 function Contato() {
@@ -31,10 +33,12 @@ function Contato() {
     }
 
     return(
+        <div>
+        <Header/>
         <div className="contato">
             <div className="container">
-                <div className="p-3 text-center">
-                    <h1 className="m-3">Formulário para contato</h1>
+                <div className="p-1 mb-4 text-center">
+                    <h1 className="m-3 mt-4">Formulário para contato</h1>
                     <h5 className="mt-5">Ficou com dúvida em alguma parte do conteúdo? Gostaria de tirar dúvidas ou relatar problemas com a utilização do sistema?
                         Utilize o fomrulário a baixo para entrar em contato com a nossa equipe.</h5>
                 </div>
@@ -57,6 +61,8 @@ function Contato() {
                     <Alert show={show} key="success" variant="success">Email enviado com sucesso!</Alert>
                 </form>
             </div>
+        </div>
+        <Footer />
         </div>
     );
 }

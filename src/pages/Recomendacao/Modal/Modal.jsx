@@ -1,30 +1,32 @@
 import React from 'react';
+import { Modal, Button } from 'react-bootstrap';
+import './index.css';
 
-function ModalDetalhes({show,item,onClose}) {
-    if(!show){
-        return null;
-    }
+function ModalDetalhes(props) {
 
-    let thumbnail=item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.smallThumbnail;
+
 
     return(
-        <>
-            <div className="overlay">
-                <div className="overlay-inner">
-                    <button className="close" onClick={onClose}><i class="fas fa-times"></i></button>
-                    <div className="inner-box">
-                        <img src={thumbnail} alt="" />
-                        <div className="info">
-                            <h1>{item.volumeInfo.title}</h1>
-                            <h3>{item.volumeInfo.authors}</h3>
-                            <h4>{item.volumeInfo.publisher}<span>{item.volumeInfo.publishedDate}</span></h4><br/>
-                            <a href={item.volumeInfo.previewLink}><button>More</button></a>
-                        </div>
+        <div>
+            <Modal
+                {...props}
+                size="lg"
+                centered>
+                <Modal.Header closeButton>
+                    <Modal.Title id="contained-modal-title-vcenter">
+                    </Modal.Title>
+                </Modal.Header>
+                <Modal.Body className="p-4 content-modal">
+                    <div className="text-center">
+                        <img src={props.img} className="pb-5"/>
+                        <h5 className="content-modal mb-4 modal-titulo">{props.title}</h5>
                     </div>
-                    <h4 className="description">{item.volumeInfo.description}</h4>
-                </div>
-            </div>
-        </>
+                    <p className=""><b>Autor(es): </b>{props.autor}</p>
+                    <p className=""><b>Publicação: </b>{props.publi}</p>
+                    <p className="">{props.desc}</p>
+                </Modal.Body>
+            </Modal>
+        </div>
     )
 }
 

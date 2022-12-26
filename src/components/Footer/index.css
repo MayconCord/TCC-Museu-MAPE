@@ -1,4 +1,8 @@
 footer{
     background-color: #f18b1d;
-    color: #fff;
+    color: #fff!important;
+}
+
+footer p{
+    color:#fff!important;
 }

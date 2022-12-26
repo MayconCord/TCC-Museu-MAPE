@@ -1,6 +1,4 @@
 import { createContext, useEffect, useState } from "react";
-import { Alert } from "react-bootstrap";
-import data from "../data/questions";
 import { auth } from '../servers/config';
 import { db } from "../servers/config";
 
@@ -47,6 +45,7 @@ export const AuthProvider = ({ children }) => {
             email: email,
             turma: turma,
             pontuacao: null,
+            tentativa: 1,
         }).then((docRef)=>{
             //console.log("Dado salvo em " + docRef);
         }).catch(error => {
@@ -55,8 +54,10 @@ export const AuthProvider = ({ children }) => {
     }
 
     const salvaPontuacao = async (pontuacao) => {
+        let tentativaE = await pegaTentativa();
         await db.collection("alunos").doc(user.uid).update({
             pontuacao: pontuacao,
+            tentativa: tentativaE,
         }).then((res) => {
             console.log("Pontuacao setada ", res)
         }).catch((erro) => {
@@ -70,7 +71,6 @@ export const AuthProvider = ({ children }) => {
             setUser(res.user);
             sessionStorage.setItem("@AuthFirebase:user", JSON.stringify(res.user));
             setC("Login realizado com sucesso!");
-            listaAlunos(res.user.uid);
         }).catch(error => {
             console.log(error);
             setE(error.message);
@@ -87,18 +87,30 @@ export const AuthProvider = ({ children }) => {
         .catch((e) => console.log(e));
     }
 
-    const listaAlunos = async () => {
-        await db.collection("alunos").where("turma", "==", "4TIT").get().then((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-                // doc.data() is never undefined for query doc snapshots
-                console.log(doc.id, " => ", doc.data());
-            });
+    const salvaTentativa = async (tent) => {
+        await db.collection("alunos").doc(user.uid).update({
+            tentativa: tent,
+        }).then((res) => {
+            console.log("Número de tentativas setado! ", tent)
+        }).catch((erro) => {
+            console.log(erro)
         })
-        .catch((error) => {
-            console.log("Error getting documents: ", error);
+    }
+
+    const pegaTentativa = async () => {
+        let t = "";
+        await db.collection("alunos").doc(user.uid).get().then((doc) =>{
+            t = doc.data();
+            console.log(t);
+            console.log(t.nome);
+            //console.log(t.tentativa+1);
+            let res = t.tentativa+1;
+            console.log(res);
+            salvaTentativa(res);
+        }).catch(error => {
+            console.log("Erro pegaTentativa");
+            console.log(error);
         });
-        console.log(data);
-        return data;
     }
 
     const recoverPassword = (email) => {
@@ -112,5 +124,5 @@ export const AuthProvider = ({ children }) => {
         });
     }
 
-    return <AuthContext.Provider value={{user, signed: !!user , cadastro, login, e, c, cadErro, cadSucess, salvaDados, errosQuiz, setErrosQuiz, salvaPontuacao, logout, recoverPassword }}>{children}</AuthContext.Provider>
+    return <AuthContext.Provider value={{user, signed: !!user , cadastro, login, e, c, cadErro, cadSucess, salvaDados, errosQuiz, setErrosQuiz, salvaPontuacao, logout, recoverPassword, pegaTentativa }}>{children}</AuthContext.Provider>
 }

@@ -14,7 +14,7 @@
 
 @media only screen and (max-width: 500px){
     .contato{
-        height: auto;
+        height: 100%;
         padding: 2rem;
     }
     .contato h1{

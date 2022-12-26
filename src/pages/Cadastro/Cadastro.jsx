@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect, useRef } from "react";
 import { Alert, OverlayTrigger, Popover } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
+import Footer from "../../components/Footer/Footer";
 import './index.css'
 
 function Cadastro() {
@@ -53,6 +54,7 @@ function Cadastro() {
     }*/
 
     return(
+        <div>
         <div className="cadastro">
             <div className="container">
                 <div className="m-4">
@@ -121,6 +123,8 @@ function Cadastro() {
                     </div>
                 </div>
             </div>
+        </div>
+        <Footer/>
         </div>
     )
 }

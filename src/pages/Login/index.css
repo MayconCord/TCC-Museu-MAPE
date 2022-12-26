@@ -1,6 +1,8 @@
 .login{
-    height: 85vh;
-    padding-bottom: 2rem;
+}
+
+.login-area{
+    height: 82vh;
 }
 
 .login h1, h5, label {

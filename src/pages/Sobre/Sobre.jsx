@@ -1,5 +1,7 @@
 import React from "react";
-import { Card, Button } from "react-bootstrap"
+import { Card, Button } from "react-bootstrap";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 import './index.css'; 
 import lara from '../../assets/lara.png';
 import lilian from '../../assets/lilian.png';
@@ -7,13 +9,15 @@ import maycon from '../../assets/maycon.png';
 
 function Sobre() {
     return(
+        <div>
+            <Header />
         <div className="sobre">
             <div className="container">
-                <div className="p-3 pb-2 text-center">
+                <div className="p-3 pt-5 pb-2 text-center">
                     <h1>Sobre nós</h1>
                 </div>
                 <div className="m-5 mt-0 mb-0 text">
-                    <p>O Museu Afro-PE é o Trabalho de Conclusão do curso Técnico em Informática do Instituto Federal de Pernambuco - campus Garanhuns, pertencente aos discentes: Lara Emanuely, Lilian Oliveira e Maycon Cordeiro. </p>
+                    <p>O Museu Afro-PE éfaz parte do Trabalho de Conclusão do curso Técnico em Informática do Instituto Federal de Pernambuco - campus Garanhuns, pertencente aos discentes: Lara Emanuely, Lilian Oliveira e Maycon Cordeiro. </p>
                 </div>
                 <div className="row">
                     <div className="col-sm-6">
@@ -36,7 +40,7 @@ function Sobre() {
                                     <Card.Img variant="top" />
                                     <Card.Body>
                                         <div className="text-center">                                            
-                                            <Card.Title className="m-4 text-card">Prof. Ciro Azevedo</Card.Title>
+                                            <Card.Title className="m-4 text-card">Ciro Azevedo</Card.Title>
                                             <Card.Text className="m-3 text-card sub">Co-orientador</Card.Text>
                                             <Card.Text className="m-3 text-card">Professor de História do IFPE campus Garanhuns</Card.Text>
                                         </div>
@@ -91,6 +95,8 @@ function Sobre() {
                     </div>
                 </div>
             </div>
+        </div>
+        <Footer />
         </div>
     );
 }

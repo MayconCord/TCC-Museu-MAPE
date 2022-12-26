@@ -1,6 +1,7 @@
 import React from 'react';
 import { useContext, useEffect } from "react";
 import { QuizContext } from "../../contexts/QuizContext";
+import Header from '../../components/Header/Header';
 import Welcome from "../../components/Welcome/Welcome";
 import Question from "../../components/Question/Question";
 import GameOver from "../../components/GameOver/GameOver";
@@ -16,6 +17,7 @@ function QuizApp() {
 
     return (
         <div className="body">
+            <Header />
             <div className="App">
                 <h1>Quiz Afro PE</h1>
                 <div className="content-quiz">

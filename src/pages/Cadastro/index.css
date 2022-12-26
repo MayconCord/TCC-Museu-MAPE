@@ -1,5 +1,5 @@
 .cadastro {
-    height: 100vh;
+    height: 83vh;
     padding-bottom: .5rem;
 }
 
@@ -23,7 +23,7 @@
 
 @media only screen and (max-width: 500px) {
     .cadastro{
-        height: 100vh;
+        height: 100%;
     }
     .cadastro h1{
         font-size: 26px;

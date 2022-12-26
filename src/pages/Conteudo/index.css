@@ -1,0 +1,14 @@
+.text-content{
+    color: #8a1b14!important;
+}
+
+.conteudo{
+    height: 84vh;
+    width: 100vw;
+}
+
+@media only screen and (max-width: 500px){
+    .conteudo{
+        height: 100%;
+    }
+}

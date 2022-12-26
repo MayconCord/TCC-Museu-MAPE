@@ -18,7 +18,7 @@ function Recomendacao(){
             return i;
         });
         
-        console.log(errosFiltrados);
+        //console.log(errosFiltrados);
     
         if(errosFiltrados.length == 0) {
             setBusca("cultura afro brasileira");
@@ -47,8 +47,8 @@ function Recomendacao(){
         <section className="booklist">
             <div className="container">
                 <div className="section-title">
-                    <h2 className='pb-5'>Recomendação de livros</h2>
-                    <p>{message}</p>
+                    <h2 className='pb-2'>Recomendação de livros</h2>
+                    <p className='pb-2'>{message}</p>
                 </div>
                 <div className="booklist-content grid">
                     {

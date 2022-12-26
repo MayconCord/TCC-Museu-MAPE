@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { QuizContext } from "../../contexts/QuizContext";
 import "./index.css";
-import Quiz from "../../assets/img/quiz.svg";
+import Quiz from "../../assets/welcome.svg";
 
 const Welcome = () => {
     const [quizState, dispatch] = useContext(QuizContext);

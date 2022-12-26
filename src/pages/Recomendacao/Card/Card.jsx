@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import { Modal, Button } from "react-bootstrap";
+import ModalDetalhes from "../Modal/Modal";
 import '../index.css';
 
 function Card (item) {
 
-    const [show,setShow]=useState(false);
+    const [show, setShow] = useState(false);
 
     return (
+        <div>
             <div className='book-item flex flex-column flex-sb' onClick={() => setShow(true)}>
                 <div className='book-item-img'>
                     <img src={item.volumeInfo.imageLinks.thumbnail} alt="cover" className="card-img-top img-fluid" />
@@ -31,20 +32,9 @@ function Card (item) {
                     <span>{item.volumeInfo.pageCount}</span>
                     </div>
                 </div>
-                <Modal show={show} centered>
-                    <Modal.Header closeButton>
-                    </Modal.Header>
-                    <Modal.Body className="p-4">
-                        <img src={item.volumeInfo.imageLinks.thumbnail} alt="cover" className="" />
-                        <h4 className="mb-4">{item.volumeInfo.title}</h4>
-                        <p className="text-card">{item.volumeInfo.authors}</p>
-                        <p className="text-card">{item.volumeInfo.description}</p>
-                    </Modal.Body>
-                    <Modal.Footer>
-                        <Button onClick={setShow(false)} className="btn-dgd">Close</Button>
-                    </Modal.Footer>
-                </Modal>
             </div>
+            <ModalDetalhes show={show} onHide={() => setShow(false)} img={item.volumeInfo.imageLinks.thumbnail} title={item.volumeInfo.title} autor={item.volumeInfo.authors} publi={item.volumeInfo.publishedDate} pags={item.volumeInfo.pageCount} desc={item.volumeInfo.description} />
+        </div>
     );
 }
 export default Card;

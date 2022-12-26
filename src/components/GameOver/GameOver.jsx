@@ -1,16 +1,17 @@
 import { useContext, useEffect } from "react";
 import { QuizContext } from "../../contexts/QuizContext";
 import { AuthContext } from '../../contexts/AuthContext';
-import WellDone from "../../assets/img/welldone.svg";
+import WellDone from "../../assets/congrat.svg";
 import "./index.css";
 
 const GameOver = () => {
 
     const [quizState, dispatch] = useContext(QuizContext);
-    const { user, salvaPontuacao } = useContext(AuthContext);
+    const { user, salvaPontuacao, pegaTentativa } = useContext(AuthContext);
     const erros = quizState.assuntosErrados;
 
     useEffect(()=>{
+        pegaTentativa();
         salvaPontuacao(quizState.score);
     }, [])
 
