@@ -9,7 +9,7 @@ function Referencias() {
         <Header/>
             <div className='container conteudo'>
                 <h2 className='text-center p-5 pb-3'>Referências</h2>
-                <p className='text-center text-content pb-5'>Materias que foram consultados e utilizados como base para a produção do conteúdo do MAPE.</p>
+                <p className='text-center text-content pb-5'>Materiais que foram consultados e utilizados como base para a produção do conteúdo do MAPE.</p>
 
                 <p className='text-content'>EDUCAMAIS BRASIL. MARACATU. Disponível em: https://www.educamaisbrasil.com.br/ enem/artes/maracatu. Acesso em: 17 out. 2021.</p>
                 <p className='text-content'>G1 GLOBO. Aprenda diferenças entre os três tipos de frevo: canção, de rua e de bloco. Disponível em: https://g1.globo.com/pe/pernambuco/ carnaval/2019/noticia/2019/02/25/ aprenda-diferencas-entre-os-tres-tipos-de-frevo-cancao-de-rua-e-de-bloco.ghtml. Acesso em: 16 out. 2021.</p>

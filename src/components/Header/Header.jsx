@@ -23,6 +23,7 @@ const Header = (props) => {
                         <Nav.Link><Link to="/sobre" className="links">Sobre nós</Link></Nav.Link>
                         <Nav.Link><Link to="/contato" className="links">Contato</Link></Nav.Link>
                         <Nav.Link id="login-link"><Link to="/login" className="links">Login</Link></Nav.Link>
+                        <Nav.Link id="login-link"><Link to="/professor" className="links">Área do Professor</Link></Nav.Link>
                     </Nav>
                     </Navbar.Collapse>
                 </Container>

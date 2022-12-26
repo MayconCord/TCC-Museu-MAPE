@@ -44,7 +44,7 @@ export const AuthProvider = ({ children }) => {
             nome: nome,
             email: email,
             turma: turma,
-            pontuacao: null,
+            pontuacao: 0,
             tentativa: 1,
         }).then((docRef)=>{
             //console.log("Dado salvo em " + docRef);
@@ -54,12 +54,11 @@ export const AuthProvider = ({ children }) => {
     }
 
     const salvaPontuacao = async (pontuacao) => {
-        let tentativaE = await pegaTentativa();
         await db.collection("alunos").doc(user.uid).update({
             pontuacao: pontuacao,
-            tentativa: tentativaE,
         }).then((res) => {
             console.log("Pontuacao setada ", res)
+            console.log(pontuacao)
         }).catch((erro) => {
             console.log(erro)
         })
@@ -101,8 +100,6 @@ export const AuthProvider = ({ children }) => {
         let t = "";
         await db.collection("alunos").doc(user.uid).get().then((doc) =>{
             t = doc.data();
-            console.log(t);
-            console.log(t.nome);
             //console.log(t.tentativa+1);
             let res = t.tentativa+1;
             console.log(res);
@@ -124,5 +121,5 @@ export const AuthProvider = ({ children }) => {
         });
     }
 
-    return <AuthContext.Provider value={{user, signed: !!user , cadastro, login, e, c, cadErro, cadSucess, salvaDados, errosQuiz, setErrosQuiz, salvaPontuacao, logout, recoverPassword, pegaTentativa }}>{children}</AuthContext.Provider>
+    return <AuthContext.Provider value={{user, signed: !!user , cadastro, login, e, c, cadErro, cadSucess, salvaDados, errosQuiz, setErrosQuiz, salvaPontuacao, recoverPassword, pegaTentativa }}>{children}</AuthContext.Provider>
 }

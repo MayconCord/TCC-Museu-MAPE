@@ -9,6 +9,7 @@ import Home from './pages/Home/Home';
 import Quiz from './pages/Quiz/Quiz';
 import Materiais from './pages/Conteudo/Materiais';
 import Referencias from './pages/Conteudo/Referências';
+import AcessoProf from './pages/AcessoProf/AcessoProf';
 import PrivateRoutes from './routes';
 import { AuthProvider } from './contexts/AuthContext';
 import PainelProfessor from './pages/Professor/Professor';
@@ -30,7 +31,9 @@ function App() {
             <Route path="/quiz" element={<Quiz />} />
           </Route>
           <Route path="/materiais" element={<Materiais />} />
-          <Route path="/professor" element={<PainelProfessor />} />
+          <Route path="/professor" element={<AcessoProf />}>
+            <Route path="/professor" element={<PainelProfessor />} />
+          </Route>
           <Route path="/referencias" element={<Referencias/>} />
         </Routes>
         </AuthProvider>

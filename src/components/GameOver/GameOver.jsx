@@ -13,7 +13,7 @@ const GameOver = () => {
     useEffect(()=>{
         pegaTentativa();
         salvaPontuacao(quizState.score);
-    }, [])
+    }, [quizState]);
 
     return (
         <div id="gameover">

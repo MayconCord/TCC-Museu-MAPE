@@ -90,13 +90,14 @@ function PainelProfessor() {
                                     <tbody>
                                         {
                                             data.map((user, index) => {
+                                                let t = user.tentativa-1;
                                                 return(
                                                     <tr className="table-data">
                                                         <td>{index+1}</td>
                                                         <td>{user.nome}</td>
                                                         <td>{user.email}</td>
                                                         <td>{user.pontuacao}</td>
-                                                        <td>{user.tentativa}</td>
+                                                        <td>{t}</td>
                                                     </tr>
                                                 );
                                             })
@@ -108,7 +109,6 @@ function PainelProfessor() {
                 </div>
             </div>  
         </div>
-        <Charts />
         <Footer />
         </div>
     );
