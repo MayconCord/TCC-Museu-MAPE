@@ -22,3 +22,9 @@
 .text p{
     color: #8a1b14!important;
 }
+
+@media only screen and (max-width: 500px){
+    .img-card{
+        width: 200px;
+    }
+}

@@ -23,7 +23,7 @@ function Materiais() {
                 </div>
 
                 <h4>Vídeos:</h4>
-                <div className="row text-center pb-5">
+                <div className="row text-center pb-2">
                     <div className="col-sm-4">
                     <iframe height="200" width="300" src="https://www.youtube.com/embed/T5cGH2uWFd4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
