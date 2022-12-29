@@ -14,12 +14,17 @@ function Cadastro() {
     const [serie, setSerie] = useState("");
     const [curso, setCurso] = useState("");
     const [turno, setTurno] = useState("");
-    const [turma, setTurma] = useState("");
-    const [confirmPswd, setConfirmPswd] = useState("");
+    const [turma, setTurma] = useState();
     const [show, setShow] = useState(false);
     const [showS, setShowS] = useState(false);
-    const [showConfirmPassword, setShowConfPswd] = useState(false);
-    const ref = useRef(null);
+    const [showErrorEmail, setShowErrorEmail] = useState(false);
+    const [errorEmail, setErrorEmail] = useState("");
+    const [showErrorPswd, setShowErrorPswd] = useState(false);
+    const [errorPswd, setErrorPswd] = useState("");
+    const [showErrorTurma, setShowErrorTurma] = useState(false);
+    const [showErrorNome, setShowErrorNome] = useState(false);
+    const [showConfirmError, setShowConfirmError] = useState(false);
+    const [confirmPswd, setConfirmPswd] = useState();
 
     const { cadastro, cadErro, cadSucess } = useContext(AuthContext);
 
@@ -45,14 +50,66 @@ function Cadastro() {
         cadastro(nome, email, password, turma);
     }
 
-    /*const handleConfirmPswd = (e) => {
+    function validateEmail(email) {
+        return  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+    }
+
+    const validateNome = (e) => {
+        setNome(e);
+        if(nome){
+            setShowErrorNome(false);
+            return true;
+        } else {
+            setShowErrorNome(true);
+            return false;
+        }
+    } 
+
+    const validationConfirmPswd = (e) => {
         setConfirmPswd(e);
-        if(confirmPswd !== password){
-            setShowConfPswd(true);
+        const r = password === confirmPswd;
+        if(r) {
+            setShowConfirmError(false)
+        } else {
+            setShowConfirmError(true)
+        }
+    }
+
+    const a = () => {
+
+        let r = <Alert key="danger" variant="danger">{errorEmail}</Alert>
+    }
+
+    /*const validationTurma = () => {
+        if(turma){
+            setShowErrorTurma(false);
+            return true;
+        }
+        setShowErrorTurma(true);
+        return false;
+    }
+
+    const validationsEmail = (e) => {
+        setEmail(e);
+        const r = validateEmail(e);
+        if(!r){
+            setErrorEmail(<Alert key="danger" variant="danger">Email inválido!</Alert>)
+            setShowErrorEmail(true)
         } else{
-            setShowConfPswd(false);
+            setErrorEmail("");
+            setShowErrorEmail(false)
         }
     }*/
+
+    const validationsSenha = (e) => {
+        setPassword(e);
+        if(password.length < 6){
+            setShowErrorPswd(true);
+            setErrorPswd("Digite uma senha que possua mais de 6 caracteres ")
+        } else {
+            setShowErrorPswd(false);
+        }
+    }
 
     return(
         <div>
@@ -62,10 +119,12 @@ function Cadastro() {
                 <div className="m-4">
                     <div className="form-container">
                         <h1 className="p-3 text-center">Cadastro</h1>
+                        <p className="text-center">Preencha todos os campos!</p>
                         <form>
                         <div class="mb-3">
                             <label class="form-label">Nome:*</label>
-                            <input type="text" class="form-control" name="nome" id="nome" placeholder="Digite seu nome" required onChange={(e) => setNome(e.target.value)} />
+                            <input type="text" class="form-control" name="nome" id="nome" placeholder="Digite seu nome" required onChange={(e) => validateNome(e.target.value)} />
+                            <Alert show={showErrorNome} key="danger" variant="danger">Digite seu nome</Alert>
                         </div>
                         <div class="mb-3">
                             <div className="row">
@@ -96,24 +155,27 @@ function Cadastro() {
                                         </select>
                                     </div>
                                 </div>
+                                <Alert show={showErrorTurma} key="danger" variant="danger">Selecione a turma!</Alert>
                             </div>
                             
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Email:*</label>
                             <input type="email" class="form-control" name="email" id="email" placeholder="Digite seu email" required onChange={(e) => setEmail(e.target.value)} />
+                            <Alert show={showErrorEmail} key="danger" variant="danger">Digite um email válido</Alert>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Senha:*</label>
-                            <input type="password" class="form-control" name="password" id="password" placeholder="Digite sua senha" required onChange={(e) => setPassword(e.target.value)} />
+                            <input type="password" class="form-control" name="password" id="password" placeholder="Digite sua senha" required onChange={(e) => validationsSenha(e.target.value)} />
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Confirme sua senha:*</label>
-                            <input type="password" class="form-control" name="confirm-password" id="confirm-password" required placeholder="Digite sua senha" />
+                            <input type="password" class="form-control" name="confirm-password" id="confirm-password" placeholder="Digite sua senha" onChange={(e) => validationConfirmPswd(e.target.value)}/>
+                            <Alert show={showConfirmError} key="danger" variant="danger">As senhas não coincidem!</Alert>
                         </div>
                         </form>
                         <div className="text-center">
-                            <button id="login-button" className="m-4 mb-3 btn-dgd" onClick={() => handleCadastro()}>Cadastrar</button>
+                            <button id="login-button" className="m-4 mb-3 btn-dgd" disabled={!validateEmail(email) || validationTurma() || validateNome() || password===confirmPswd} onClick={() => handleCadastro()}>Cadastrar</button>
                             <div className="m-2">
                                 <p className="text-card">Já possui uma conta? <Link to="/login" id="cadastro-button">Faça login clicando aqui.</Link></p>
                             </div>

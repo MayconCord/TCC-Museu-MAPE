@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, redirect } from "react-router-dom";
 import { Alert } from "react-bootstrap";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
@@ -14,8 +14,13 @@ function Login() {
     const [showS, setShowS] = useState(false);
     const [showErrorRec, setShowErrorRec] = useState(false);
     const [respostaRec, setRespostaRec] = useState("");
+    const [showErrorEmail, setShowErrorEmail] = useState(false);
+    const [errorEmail, setErrorEmail] = useState("");
+    const [showErrorPswd, setShowErrorPswd] = useState(false);
+    const [errorPswd, setErrorPswd] = useState("");
+    const minPwdLength = 6;
 
-    const { login, e, c, recoverPassword } = useContext(AuthContext);
+    const { user, login, e, c, recoverPassword } = useContext(AuthContext);
 
     const handleRecoverPswd = () => {
         if(!email){
@@ -28,43 +33,72 @@ function Login() {
         }
     }
 
+    function validateEmail(email) {
+        return /\S+@\S+\.\S+/.test(email);
+    }
+
+    const validationsEmail = (e) => {
+        setEmail(e);
+        const r = validateEmail(e);
+        if(!r){
+            setErrorEmail("Digite um email válido")
+            setShowErrorEmail(true)
+        } else{
+            setShowErrorEmail(false)
+        }
+    }
+
+    const validationsSenha = (e) => {
+        setPassword(e);
+        if(password.length < minPwdLength){
+            setShowErrorPswd(true);
+            setErrorPswd("Digite uma senha que possua mais de 6 caracteres ")
+        } else {
+            setShowErrorPswd(false);
+        }
+    }
+
     useEffect(() => {
         if(e){
             setShow(true);
-            setShowS(false)
+            setShowS(false);
         }
     }, [e]);
 
     useEffect(() => {
         if(c){
             setShow(false);
-            setShowS(true)
+            setShowS(true);
         }
     }, [c])
 
     const handleLogin = (e) => {
         e.preventDefault();
-        login(email, password)
+        login(email, password);
     }
 
+    if(user){
+        <Navigate to="/"/>
+    }
 
     return(
         <div className="login">
             <Header/>
             <div className="container login-area">
                 <div className="m-4">
-                    <form method="POST" className="form">
                         <h1 className="p-3 text-center">Login Aluno</h1>
                         <div class="mb-3">
                             <label class="form-label">Email:</label>
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Digite seu email" required onChange={(e) => setEmail(e.target.value)} />
+                            <input type="email" class="pb-2 form-control" name="email" id="email" placeholder="Digite seu email" onChange={(e) => validationsEmail(e.target.value)} />
+                            <Alert show={showErrorEmail} key="danger" variant="danger">{errorEmail}</Alert>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Senha:</label>
-                            <input type="password" class="form-control" name="password" id="password" placeholder="Digite sua senha" required onChange={(e) => setPassword(e.target.value)} />
+                            <input type="password" class="pb-2 form-control" name="password" id="password" placeholder="Digite sua senha" onChange={(e) => validationsSenha(e.target.value)} />
+                            <Alert show={showErrorPswd} key="danger" variant="danger">{errorPswd}</Alert>
                         </div>
                         <div className="text-center">
-                            <button id="login-button" className="m-4 mb-3 btn-dgd" onClick={(e) => handleLogin(e)}>Entrar</button>
+                            <button id="login-button" className="m-4 mb-3 btn-dgd" disabled={!validateEmail(email)} onClick={(e) => handleLogin(e)}>Entrar</button>
                             <div className="m-2">
                                 <p>Ainda não possui uma conta? <Link to="/cadastro" id="cadastro-button">Crie uma clicando aqui.</Link></p>
                             </div>
@@ -77,7 +111,6 @@ function Login() {
                             <Alert show={showS} key="success" variant="success">{c}</Alert>
                             <Alert show={showErrorRec} key="warning" variant="warning">{respostaRec}</Alert>
                         </div>
-                    </form>
                 </div>
             </div>
             <Footer />

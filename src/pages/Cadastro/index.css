@@ -1,5 +1,6 @@
 .cadastro {
-    height: 83vh;
+    min-height: 83.4vh;
+    height: 100%;
     padding-bottom: .5rem;
 }
 

@@ -1,8 +1,11 @@
 .login{
+    min-height: 85vh;
+    height: 100%;
 }
 
 .login-area{
-    height: 82vh;
+    min-height: 82vh;
+    height: 100%;
 }
 
 .login h1, h5, label {
